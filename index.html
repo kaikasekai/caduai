@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>BTC Forecasts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js" defer></script>
+  <!-- Wallet (EIP-1193 / MetaMask) -->
+  <script src="wallet.js" defer></script>
+  <!-- App -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar container">
+    <div class="brand">BTC Forecasts</div>
+    <div class="wallet-box">
+      <span id="planBadge" class="badge">Plan: FREE</span>
+      <button id="connectBtn" class="btn">Connect Wallet</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h1 class="title">Forecasts & Actuals</h1>
+      <p class="subtitle">Access depends on your plan: Free (current month), Pro1 (+1 month), Pro2 (+2 months).</p>
+      <div class="canvas-wrap">
+        <canvas id="chart"></canvas>
+      </div>
+      <div id="notice" class="notice"></div>
+    </section>
+
+    <section class="card">
+      <button class="accordion-toggle">About the project</button>
+      <div class="accordion-content">
+        <p>This site visualizes multiple BTC forecasts, their average, daily actuals, and a 30-day moving average.
+        The first 30 rows in <code>data.csv</code> contain only <code>btc_actual</code> used to seed the MA.
+        Forecasts start from row 31.</p>
+        <ul>
+          <li>Free: current month</li>
+          <li>Pro1: current + 1 month</li>
+          <li>Pro2: current + 2 months</li>
+        </ul>
+      </div>
+
+      <button class="accordion-toggle">How access works</button>
+      <div class="accordion-content">
+        <p>Connect your wallet to unlock more months. In this prototype your plan is mocked in code or via URL, e.g. <code>?plan=pro2</code>.
+        Later, on-chain payment verification will set your plan automatically.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <div>© 2025 BTC Forecasts</div>
+  </footer>
+</body>
+</html>

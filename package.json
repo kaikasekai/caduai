@@ -1,0 +1,11 @@
+{
+  "name": "btc-forecast-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "update": "node update-data.js"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.7"
+  }
+}
